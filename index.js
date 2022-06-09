@@ -20,9 +20,11 @@ app.get('/', (req, res) => {
 
 app.get('/home', (req, res) => {
     res.send('Homie!');
-})
+});
 
-app.get('/router', router);
+app.get('/router', (req, res) => {
+    res.send('Router!!');
+});
 
 app.listen(process.env.PORT || 3000);
 
