@@ -22,8 +22,11 @@ app.get('/home', (req, res) => {
     res.send('Homie!');
 });
 
-app.get('/router', (req, res) => {
-    res.send('Router!!');
+app.get('/router', async (req, res, next) => {
+  return res.status(200).json({
+    title: "Express Testing Router!",
+    message: "The app is working properly!",
+  });
 });
 
 app.listen(process.env.PORT || 3000);
